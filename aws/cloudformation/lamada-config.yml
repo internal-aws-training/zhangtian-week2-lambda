@@ -6,17 +6,11 @@ Resources:
     Type: AWS::Lambda::Function
     Properties:
       Code:
-        ZipFile: >
-          exports.helloWord = (number) => {
-            console.log("start run server");
-            console.log("number is:", number);
-            console.log("Hello Word");
-
-            return number;
-          };
+        S3Bucket: "lambda-traning-zhangtian"
+        S3Key: "zipFile.zip"
 
       FunctionName: "zhangtian-cloudformation"
-      Handler: "index.helloWord"
-      Role: "arn:aws:iam::494526681395:role/aws-training"
+      Handler: "index.run"
+      Role: "arn:aws:iam::494526681395:role/for-aws-training"
       Runtime: "nodejs10.x"
 
