@@ -1,0 +1,22 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Create a lamada function
+
+Resources:
+  LamadaFunctionPolicy:
+    Type: AWS::Lambda::Function
+    Properties:
+      Code:
+        ZipFile: >
+          exports.helloWord = (number) => {
+            console.log("start run server");
+            console.log("number is:", number);
+            console.log("Hello Word");
+
+            return number;
+          };
+
+      FunctionName: "zhangtian-cloudformation"
+      Handler: "index.helloWord"
+      Role: "arn:aws:iam::494526681395:role/aws-training"
+      Runtime: "nodejs10.x"
+

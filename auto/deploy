@@ -1,0 +1,3 @@
+aws cloudformation create-stack \
+--stack-name zhangtian-lamada-example \
+--template-body file://aws/cloudformation/lamada-config.yml
